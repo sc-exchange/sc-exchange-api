@@ -11,6 +11,7 @@ def sign(message, secretKey):
     #return base64.b64encode(d)
     print "message" , message 
     print "secretKey" , secretKey
+    print "sign",base64.b64encode(hmac.new(secretKey, message, digestmod=hashlib.sha256).digest())
     return base64.b64encode(hmac.new(secretKey, message, digestmod=hashlib.sha256).digest())
 
 
@@ -28,6 +29,7 @@ def get_header(api_key, sign, timestamp, passphrase , source = "API"):
     header[c.SC_ACCESS_PASSPHRASE] = passphrase
     header[c.SC_ACCESS_FROM] = source
 
+    #print header
     return header
 
 
@@ -40,10 +42,11 @@ def parse_params_to_str(params):
 
 
 def get_timestamp():
-    now = datetime.datetime.now()
+    return time.time()
+    #now = datetime.datetime.now()
     # t = now.isoformat("T", "milliseconds")
-    t = now.isoformat("T")[0:-3]
-    return t + "Z"
+    #t = now.isoformat("T")[0:-3]
+    #return t + "Z"
 
 
 def signature(timestamp, method, request_path, body, secret_key):

@@ -7,13 +7,28 @@ class SpotAPI(Client):
     def __init__(self, api_key, api_seceret_key, passphrase, use_server_time=False):
         Client.__init__(self, api_key, api_seceret_key, passphrase, use_server_time)
 
+    # get server time
+    def get_server_time(self):
+        return self._get_timestamp()
+
     # query spot account info
     def get_account_info(self):
         return self._request_without_params(POST, SPOT_BALANCE)
 
+    # get depth
+    def get_depth(self, symbol,limit):
+        params = {"symbol":symbol, "limit":limit}
+        return self._request_no_sign(GET, SPOT_QUERY_DEPTH_INFO , params)
+
+    #gettrades
+    def get_trades(self, symbol,limit):
+        params = {"symbol":symbol , "limit":limit}
+        return self._request_no_sign(GET, SPOT_QUERY_RECENT_TRADES , params)
+
     # trade_limit
     def trade_limit(self, _type , symbol, price , volume,  unique):
         params = { "type":_type , "volume":volume , "price":price , "symbol": symbol , "unique":unique}
+        print "params", params
         return self._request_with_params( POST, SPOT_TRADE_LIMIT , params )
 
     # cancel_order

@@ -25,9 +25,10 @@ SERVER_TIMESTAMP_URL = '/api/general/v1/time'
 
 # account
 # spot
-SPOT_QUERY_EXCHANGE_INFO = '/api/spot/v1/exchange_info'
-SPOT_QUERY_DEPTH = '/api/spot/v1/get_depth'
+SPOT_QUERY_DEPTH_INFO = '/api/spot/v1/get_depth'
 SPOT_QUERY_RECENT_TRADES = '/api/spot/v1/recent_trade'
+SPOT_QUERY_EXCHANGE_INFO = '/api/spot/v1/exchange_info'
+
 SPOT_BALANCE = '/api/spot/v1/balance'
 SPOT_TRADE_LIMIT = '/api/spot/v1/trade/limit'
 SPOT_CANCEL_ORDER = '/api/spot/v1/trade_cancel'

@@ -64,12 +64,6 @@ class Client(object):
         try:
             res_header = response.headers
             if cursor:
-                r = dict()
-                try:
-                    r['before'] = res_header['OK-BEFORE']
-                    r['after'] = res_header['OK-AFTER']
-                except:
-                    print("")
                 return response.json(), r
             else:
                 return response.json()
