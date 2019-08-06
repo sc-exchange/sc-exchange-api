@@ -1,7 +1,7 @@
 
 
 # http header
-API_URL = 'http://127.0.0.1:1234'
+API_URL = 'http://119.3.65.40:3333'
 CONTENT_TYPE = 'Content-Type'
 SC_ACCESS_KEY = 'SC-ACCESS-KEY'
 SC_ACCESS_SIGN = 'SC-ACCESS-SIGN'

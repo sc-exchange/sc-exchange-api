@@ -63,6 +63,7 @@ class Client(object):
             raise exceptions.SCAPIException(response)
         try:
             res_header = response.headers
+            print response.text
             if cursor:
                 return response.json(), r
             else:
