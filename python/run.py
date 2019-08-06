@@ -6,7 +6,7 @@ if __name__ == "__main__":
 	secretkey = "BuQQM9mvli7cbhZyaxro9FeOWYzPzHl9nnXFGNb9v8"
 	passphrase = "passphrase"
 
-	secretkey = "1"
+	#secretkey = "1"
 
 	api = SpotAPI(api_key , secretkey , passphrase )
 	
